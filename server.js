@@ -24,7 +24,9 @@ connectToMongo();
 
 const contestRoutes = require("./routes/contestRoutes");
 const userRoutes = require("./routes/userRoutes");
+const predictRoutes = require("./routes/predictRoutes");
 
 
 app.use("/api/", contestRoutes);
 app.use("/api/", userRoutes);
+app.use("/api/", predictRoutes);
