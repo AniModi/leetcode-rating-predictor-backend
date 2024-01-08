@@ -56,9 +56,10 @@ async function predictRating(req, res) {
 
     const response = await fetchData(sortedUsernames);
     
-    let u = 3;
+    for(let u = 0; u < 10; u ++) {
+      console.log((getPredictedRatings(response[1], u) - response[1][u]) * f(response[0][u]));
+    }
 
-    console.log((getPredictedRatings(response[1], u) - response[1][u]) * f(response[0][u]));
 
     res.json(response);
   } catch (err) {

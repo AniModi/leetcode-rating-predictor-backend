@@ -28,6 +28,9 @@ async function fetchNextPage(url, page, contestID) {
   let ranks = data.total_rank;
 
   for (let i = 0; i < ranks.length; i++) {
+    if(ranks[i].score === 0) {
+      continue;
+    }
     contest_data.push({
       username: ranks[i].username,
       rank: ranks[i].rank,
